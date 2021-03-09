@@ -1,7 +1,7 @@
 import DataVisualisation as dv
 
 data = dv.readData()
-choice = 1
+dv.barPriceVsTown(data)
 
 while (true):
     try:
