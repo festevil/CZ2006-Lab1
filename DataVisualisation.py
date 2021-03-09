@@ -20,22 +20,23 @@ def readData():
 
 # display a bar graph of the flat's resale price against the town
 def barPriceVsTown(csvData):
-    sb.barplot(x='resale_price', y='town', data = csvData)
-    plt.show()
-
+    plot = sb.barplot(x='resale_price', y='town', data = csvData)
+    fig = plot.get_figure()
+    fig.savefig('town.png')                     # save plot to PNG for use in HTML
+    
 # display a bar graph of the flat's resale price against the flat type
 def barPriceVsFlatType(csvData):
-    sb.barplot(x='resale_price', y='flat_type', data=csvData, order=["1 ROOM", "2 ROOM", "3 ROOM", "4 ROOM", "5 ROOM", "EXECUTIVE", "MULTI-GENERATION"])
-    plt.show()
+    plot = sb.barplot(x='resale_price', y='flat_type', data=csvData, order=["1 ROOM", "2 ROOM", "3 ROOM", "4 ROOM", "5 ROOM", "EXECUTIVE", "MULTI-GENERATION"])
+    fig = plot.get_figure()
+    fig.savefig('flat_type.png')                # save plot to PNG for use in HTML
 
 # display a point plot of the flat's resale price against the year the resale occurred
 def pointPriceVsYear(csvData):
     csvData['year']=csvData['month'].str[:4]
-    sb.pointplot(x='year', y='resale_price', data=csvData)
-    #sb.pointplot(x='month', y='resale_price', data=csvData)
-    #sb.barplot(x='year', y='resale_price', data=post2k)
-    plt.show()
-
+    plot = sb.pointplot(x='year', y='resale_price', data=csvData)
+    fig = plot.get_figure()
+    fig.savefig('year.png')                     # save plot to PNG for use in HTML
+    
 '''
 #for debugging
 def main():
