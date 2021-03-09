@@ -8,8 +8,8 @@ pd.set_option('display.max_rows',None)
 
 
 #constructor
-def __init__(self, csvData):
-    self.csvData = csvData
+'''def __init__(self, csvData):
+    self.csvData = csvData'''
 
 def readData():
     #pre2k=pd.read_csv('approval-date-1990-1999.csv')
