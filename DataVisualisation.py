@@ -45,7 +45,7 @@ def barPriceVsFlatType(csvData):
 
 # display a point plot of the flat's resale price against the year the resale occurred
 def pointPriceVsYear(csvData):
-    plot = sb.pointplot(x='year', y='resale_price', data=csvData)
+    plot = sb.lineplot(x='year', y='resale_price', data=csvData)
     fig = plot.get_figure()
     # save plot to PNG for use in HTML
     fig.savefig('year.png')
