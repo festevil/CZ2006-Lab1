@@ -5,6 +5,9 @@ Data Visualisation Module
 import numpy as np
 import pandas as pd
 import seaborn as sb
+import matplotlib
+# use SVG: Vector graphics format instead of being limited to pixels when saving
+matplotlib.use('SVG')
 import matplotlib.pyplot as plt
 sb.set(rc={'figure.figsize':(11.7,8.27)})
 pd.set_option('display.max_column',None)
@@ -47,12 +50,12 @@ def pointPriceVsYear(csvData):
     # save plot to PNG for use in HTML
     fig.savefig('year.png')
     
-'''
+
 #for debugging
-def main():
+'''def main():
     print("Hello World!")
     yes = readData()
-    barPriceVsTown(yes)
+    pointPriceVsYear(yes)
 
 if __name__ == "__main__":
     main()
